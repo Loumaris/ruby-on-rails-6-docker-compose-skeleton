@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  timeout: 5000
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV['POSTGRES_HOST'] || 'postgres' %>
+  port: <%= ENV['POSTGRES_PORT'] || '5432' %>
+  user: <%= ENV['POSTGRES_USER'] || 'postgres' %>
+  password: <%= ENV['POSTGRES_PASSWORD'] || 'postgres' %>
+
+development:
+  <<: *default
+  database: <%= ENV['DB_NAME_DEVELOPMENT'] || 'rails_db_development' %>
+
+test:
+  <<: *default
+  database: <%= ENV['DB_NAME_TEST'] || 'rails_db_test' %>
+
+production:
+  <<: *default
+  database: <%= ENV['DB_NAME_PRODUCTION'] || 'rails_db_production' %>
+

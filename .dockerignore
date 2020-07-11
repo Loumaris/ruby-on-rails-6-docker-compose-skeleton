@@ -1,0 +1,7 @@
+log/*
+tmp/*
+storage/*
+.git/
+README.md
+Dockerfile
+docker-compose.yaml
