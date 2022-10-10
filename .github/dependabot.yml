@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Required
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+
+    # Optional
+    assignees:
+      - 'ChristianHeimke'
+    labels:
+      - 'dependencies'
